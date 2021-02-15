@@ -1,6 +1,4 @@
 #include <stdio.h>
-#define countOfLines 7
-#define maxLength 1000
 
 int getline(char line[], int len) {
     char currChar;
@@ -19,14 +17,25 @@ void copy(char source[], char target[]) {
 }
 
 int main() {
+    int maxSize = 0;
+    int countOfLines = 0;
+
     int currLength = 0;
     int largestLength = 0;
 
-    char currLine[maxLength];
-    char largestLine[maxLength];
+    printf("Max length of the line: ");
+    scanf("%d", &maxSize);
+
+    printf("Count of lines: ");
+    scanf("%d", &countOfLines);
+    scanf("%c"); // Skipping the '\n'
+
+    char currLine[maxSize];
+    char largestLine[maxSize];
 
     for(int i = 0; i < countOfLines; i++) {
-        currLength = getline(currLine, maxLength);
+        printf("%d. ", i + 1);
+        currLength = getline(currLine, maxSize);
 
         if(currLength > largestLength) {
             largestLength = currLength;
