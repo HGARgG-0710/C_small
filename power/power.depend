@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1612043435 source:d:\igor kuznetsov\documents\programming\projects\c\power\main.c
+	<stdio.h>
+	"power.h"
+
+1612042746 d:\igor kuznetsov\documents\programming\projects\c\power\power.h
+
+1612042708 source:d:\igor kuznetsov\documents\programming\projects\c\power\power.c
+	"power.h"
+
