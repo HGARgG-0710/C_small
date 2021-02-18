@@ -1,10 +1,8 @@
 #include <stdio.h>
+#include <math.h>
+#include "./../../input_vars/input_vars.h"
 
-void inputIntVar(const char input_words[], const int *var, const char measurments[])
-{
-    printf("%s (%s): ", input_words, measurments);
-    scanf("%d", &(*var));
-}
+#define len 3
 
 int main()
 {
@@ -12,32 +10,27 @@ int main()
     int i = 0;
 
     // Constants
-    const int time;
-    const int acceleration;
+    const float time;
+    const float acceleration;
 
     // Physics variables
-    int velocity = 0;
-    int path = 0;
+    float velocity = 0;
+    float path = 0;
 
     // Arrays for storing data
-    const int *pointers[3] = {&time, &acceleration, &velocity};
-    const char measurments[3][5] = {"s", "m/s2", "m/s"};
-    const char strings[3][17] = {
+    const float *pointers[len] = {&time, &acceleration, &velocity};
+    const char measurments[len][5] = {"s", "m/s2", "m/s"};
+    const char strings[len][17] = {
         "total time",
         "acceleration",
         "start velocity",
     };
 
-    for (; i < 3; i++)
+    for (; i < len; i++)
     {
-        inputIntVar(strings[i], pointers[i], measurments[i]);
+        inputFloatVar(strings[i], measurments[i], pointers[i]);
     }
 
-    for (i = 0; i < time; i++)
-    {
-        path += velocity;
-        velocity += acceleration;
-    }
-
-    printf("total path (m): %d", path);
+    path = velocity * time + acceleration * pow(time, 2) / 2;
+    printf("\ntotal path (m): %.2f", path);
 }
