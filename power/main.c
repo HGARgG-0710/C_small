@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include "power.h"
 
-int main() { 
+int main()
+{
     int base;
     int indicator;
 
