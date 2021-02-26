@@ -1,7 +1,5 @@
 #include <stdio.h>
-
-int string_len(char *);
-void fillWithZeroes(char *);
+#include "../general/general.h"
 
 int main()
 {
@@ -20,36 +18,20 @@ int main()
 
     getchar();
 
-    printf("\n\n");
+    printf("\n");
 
     char currString[maxLen + 1];
 
     for (int i = 0; i < countOfLines; i++)
     {
+        printf("%d. ", i + 1);
         gets(currString);
 
         if (string_len(currString) > minLen)
-        {
-            printf("%s", currString);
-        }
+            printf("%s\n", currString);
 
-        printf("\n\n");
+        printf("\n");
 
         fillWithZeroes(currString);
     }
-}
-
-int string_len(char *string)
-{
-    int len = 0;
-    for (; string[len] != '\0'; len++)
-        ;
-    return len + 1;
-}
-
-void fillWithZeroes(char *string)
-{
-    const int length = string_len(string);
-    for (int i = 0; i < length; i++)
-        string[i] = '\0';
 }
