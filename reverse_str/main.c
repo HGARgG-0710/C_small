@@ -22,7 +22,7 @@ int main()
         reverse_str(currString);
 
         printf("%s", currString);
-        fillWithZeroes(currString);
+        fillWith(currString, '\0');
 
         printf("\n");
     }

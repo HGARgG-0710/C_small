@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 #include "../general/general.h"
 
 int main()
@@ -27,11 +28,11 @@ int main()
         printf("%d. ", i + 1);
         gets(currString);
 
-        if (string_len(currString) > minLen)
+        if (strlen(currString) > minLen)
             printf("%s\n", currString);
 
         printf("\n");
 
-        fillWithZeroes(currString);
+        fillWith(currString, '\0');
     }
 }

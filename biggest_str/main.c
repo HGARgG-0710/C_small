@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <string.h>
+
 #include "../general/general.h"
 
 int main()
@@ -27,8 +29,8 @@ int main()
         if (currLength > largestLength)
         {
             largestLength = currLength;
-            fillWithZeroes(largestLine);
-            copy_str(currLine, largestLine);
+            fillWith(largestLine, '\0');
+            strcpy(largestLine, currLine);
         }
     }
 
