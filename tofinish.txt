@@ -1,6 +1,2 @@
 Projects to finish:
     - Disco Elysium counter (it's not efficient enough)
-    - Most frequent word program (fix the split_str() function in the general/general.c file, there's a comment in it)
-
-Functions to fix:
-    - split_str ()
