@@ -6,7 +6,7 @@
 
 int main(int argc, char *argv[])
 {
-    FILE *input = fopen(argv[1], "r"); // * Custom input file name
+    FILE *input = fopen(argv[1], "r");  // * Custom input file name
     FILE *output = fopen(argv[2], "w"); // * Custom output file name
 
     int input_len = 0;
@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
         case '\n':
         case '\t':
             input_len--;
-        
+
         default:
             currLength++;
         }
@@ -56,11 +56,12 @@ int main(int argc, char *argv[])
 
     char mostFrequentWord[big_len];
     char currWord[big_len];
-    
+
     int timesFound = 0;
     int currTimes = 0;
 
-    for (int i = 0; i < all_words; i++) {
+    for (int i = 0; i < all_words; i++)
+    {
         lowercase(words[i]);
     }
 

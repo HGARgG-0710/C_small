@@ -97,3 +97,70 @@ int are_equal(char *str1, char *str2)
 
     return are;
 }
+
+// Takes the number and checks if it's a prime.
+int is_prime(int number)
+{
+    int half = number / 2;
+    int is_prime = 1;
+
+    for (int i = 2; i <= half; i++)
+        if (number % i == 0)
+            is_prime = 0;
+
+    return number >= 2 ? is_prime : 0;
+}
+
+// Takes two arrays and the length of the second one, one of numbers(they are already there), other for primes(this one should be empty). Fills the primes array with the prime numbers from the first one.
+void get_primes(int primes[], int numbers[], int length)
+{
+    int arr[length];
+    copy_arr(numbers, arr, length);
+
+    for (int i = 0, j = 0; i < length; i++)
+        if (numbers[i] != 0 && is_prime(numbers[i]))
+        {
+            primes[j] = arr[i];
+
+            for (int k = i; k < length; k++)
+                if (arr[k] != 0 && arr[k] % primes[j] == 0)
+                    arr[k] = 0;
+
+            j++;
+        }
+}
+
+// Fills given integers array with numbers from start to limit.
+void generate(unsigned int arr[], const unsigned int length, const unsigned int start, const unsigned int limit, const int step)
+{
+    if (step < 0)
+    {
+        for (int i = 0, j = start; j > limit && i < length; i++, j += step)
+            arr[i] = j;
+    }
+    else
+    {
+        for (int i = 0, j = start; i < length && j < limit; i++, j += step)
+            arr[i] = j;
+    }
+}
+
+// Function that takes an integer array and returns how many primes are in this array.
+int how_many_primes(int numbers[], int length)
+{
+    int count = 0;
+
+    for (int i = 0; i < length; i++)
+        if (is_prime(numbers[i]))
+            count++;
+
+    return count;
+}
+
+// Takes two arrays and copies the contents of the one into another.
+// * P.S. It is assumed that arrays are of the same length or the copy is bigger. If not, then the errors may occur.
+void copy_arr(int arr[], int copy[], int length)
+{
+    for (int i = 0; i < length; i++)
+        copy[i] = arr[i];
+}
