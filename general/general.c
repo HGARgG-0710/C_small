@@ -101,7 +101,7 @@ int are_equal(char *str1, char *str2)
 // Takes the number and checks if it's a prime.
 int is_prime(int number)
 {
-    int half = number / 2;
+    int half = number >> 1;
     int is_prime = 1;
 
     for (int i = 2; i <= half; i++)

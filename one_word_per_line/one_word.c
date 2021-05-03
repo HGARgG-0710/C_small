@@ -25,7 +25,7 @@ int main()
         }
     }
 
-    for (char i = 0, j = 0; i < sizeof(words) / sizeof(words[i]); i++, j = 0)
+    for (char i = 0, j = 0; i < arr_len(words); i++, j = 0)
     {
         for (; j < sizeof(words[i]) && words[i][0] != '\0'; j++)
             printf("%c", words[i][j]);
