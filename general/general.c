@@ -164,3 +164,28 @@ void copy_arr(int arr[], int copy[], int length)
     for (int i = 0; i < length; i++)
         copy[i] = arr[i];
 }
+
+// Takes an index and returns fibonacci number by it.
+long fibonacci(int index)
+{
+    int i = 1;
+    long fib = i;
+    long prev = 0;
+
+    if (index < 0)
+        for (i = -i; i > index; i--)
+        {
+            fib = prev - fib;
+            prev = prev - fib;
+        }
+    else if (index > 0)
+        for (; i < index; i++)
+        {
+            fib = fib + prev;
+            prev = fib - prev;
+        }
+    else
+        fib = 0;
+
+    return fib;
+}

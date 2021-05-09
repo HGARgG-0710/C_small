@@ -19,7 +19,6 @@ int main()
         testArr[i] = 1;
 
     for (char currNum = 1; currNum <= 4; currNum++)
-    {
         for (int i = 0; i < length; i++)
         {
             while (!isOverMax(testArr, length, maxSum))
@@ -30,7 +29,6 @@ int main()
 
             testArr[i] = currNum;
         }
-    }
 
     printf("Max count of possible Disco Elysium character builds: %d\n\n", count);
 }
@@ -40,7 +38,7 @@ int isOverMax(int arr[], const int arrLength, const int max)
     int sum = 0;
 
     for (int i = 0; i < arrLength; sum += arr[i], i++)
-    {
-    }
+        ;
+
     return sum > max;
 }

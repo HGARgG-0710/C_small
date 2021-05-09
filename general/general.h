@@ -17,5 +17,6 @@ void generate(unsigned int *arr, const unsigned int length, const unsigned int s
 int is_prime(int number);
 int how_many_primes(int *numbers, int length);
 void copy_arr(int *arr, int *copy, int length);
+long fibonacci(int index);
 
 #endif
